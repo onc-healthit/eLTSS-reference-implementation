@@ -1,4 +1,4 @@
-# eLTSS-Reference-Implementation
+# eLTSS Reference Implementation
 
 ## Overview
 
