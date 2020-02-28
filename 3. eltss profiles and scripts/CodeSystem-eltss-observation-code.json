@@ -1,0 +1,28 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "eltss-observation-code",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>eLTSS Observation Codes</h2><div><p>Observation codes for Strength and Preference</p>\n</div><p>This code system http://hl7.org/fhir/us/eLTSS/CodeSystem/eltss-observation-code defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">strength<a name=\"eltss-observation-code-strength\"> </a></td><td>Strength</td><td>A favorable attribute of oneself, his/her support network, environment and/or elements of his/her life.</td></tr><tr><td style=\"white-space:nowrap\">preference<a name=\"eltss-observation-code-preference\"> </a></td><td>Preference</td><td>Presents the person's personal thoughts about something he or she feels is relevant to his or her life experience and may be pertinent when planning.</td></tr></table></div>"
+  },
+  "url": "http://hl7.org/fhir/us/eLTSS/CodeSystem/eltss-observation-code",
+  "name": "ELTSS_Observation_Codes",
+  "title": "eLTSS Observation Codes",
+  "status": "draft",
+  "experimental": false,
+  "date": "2019-09-12T12:56:22-04:00",
+  "description": "Observation codes for Strength and Preference",
+  "content": "complete",
+  "concept": [
+    {
+      "code": "strength",
+      "display": "Strength",
+      "definition": "A favorable attribute of oneself, his/her support network, environment and/or elements of his/her life."
+    },
+    {
+      "code": "preference",
+      "display": "Preference",
+      "definition": "Presents the person's personal thoughts about something he or she feels is relevant to his or her life experience and may be pertinent when planning."
+    }
+  ]
+}

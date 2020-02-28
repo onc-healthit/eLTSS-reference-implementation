@@ -1,0 +1,1530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Original : 5/22/2018
+    Updated :  08/12/2019
+    FHIR version : 4.0
+ -->
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="careplantest5"/>
+  <type value="transaction"/>
+<!--   eLTSS Service Plan / FHIR Care Plan   -->
+  <entry>
+  <!--  1  -->
+    <fullUrl value="http://example.org/eLTSS/careplan-t5-1"/>
+    <resource>
+      <CarePlan>
+        <id value="careplan-t5-1"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/CarePlan-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>
+              <b>Betsy Johnson's Long Term Services and Supports (LTSS) Service Plan</b>
+            </p>
+            <p><b>Plan Effective Date:</b> 2018-05-01 - 2018-12-31</p>
+            <p><b>Step or Action:</b> client action - manage diet</p>
+            <p><b>Step or Action:</b> client action - exercise / join a fitness club</p>
+          </div>
+        </text>
+        <status value="active"/>
+        <intent value="plan"/>
+        <category>
+          <coding>
+            <system
+                    value="http://hl7.org/fhir/us/core/CodeSystem/careplan-category"/>
+            <code value="assess-plan"/>
+          </coding>
+        </category>
+        <subject>
+          <reference value="Patient/patient-t5"/>
+        </subject>
+      <!--   [eLTSS Plan Effective Date]   -->
+        <period>
+          <start value="2018-05-01"/>
+          <end value="2018-12-31"/>
+        </period>
+        <author>
+          <reference value="Practitioner/planner-t5"/>
+        </author>
+        <addresses>
+          <reference value="Condition/need-t5-1"/>
+        </addresses>
+        <addresses>
+          <reference value="Condition/need-t5-2"/>
+        </addresses>
+        <addresses>
+          <reference value="Condition/need-t5-3"/>
+        </addresses>
+        <supportingInfo>
+          <reference value="Observation/strength-t5"/>
+        </supportingInfo>
+        <supportingInfo>
+          <reference value="QuestionnaireResponse/questionnaireresponse-t5"/>
+        </supportingInfo>
+        <supportingInfo>
+          <reference value="Contract/contract-t5"/>
+        </supportingInfo>
+        <supportingInfo>
+          <reference value="RiskAssessment/risk-t5"/>
+        </supportingInfo>
+        <goal>
+          <reference value="Goal/goal-t5-1"/>
+        </goal>
+        <goal>
+          <reference value="Goal/goal-t5-2"/>
+        </goal>
+        <activity>
+        <!--   [eLTSS Step or Action]   -->
+          <detail>
+            <goal>
+              <reference value="Goal/goal-t5-1"/>
+            </goal>
+            <status value="not-started"/>
+            <description value="manage diet"/>
+          </detail>
+        </activity>
+        <activity>
+        <!--   [eLTSS Step or Action]   -->
+          <detail>
+            <goal>
+              <reference value="Goal/goal-t5-2"/>
+            </goal>
+            <status value="not-started"/>
+            <description value="exercise / join a fitness club"/>
+          </detail>
+        </activity>
+        <activity>
+          <reference>
+            <reference value="ServiceRequest/service-t5-1"/>
+          </reference>
+        </activity>
+        <activity>
+          <reference>
+            <reference value="ServiceRequest/service-t5-2"/>
+          </reference>
+        </activity>
+        <activity>
+          <reference>
+            <reference value="ServiceRequest/service-t5-3"/>
+          </reference>
+        </activity>
+      </CarePlan>
+    </resource>
+	<request>
+            <method value="PUT"/>
+            <url value="CarePlan/careplan-t5-1"/>
+    </request>
+  </entry>
+<!--   Support Planner (CarePlan author)  -->
+  <entry>
+  <!--  2  -->
+    <fullUrl value="http://example.org/eLTSS/planner-t5-1"/>
+    <resource>
+      <Practitioner>
+        <id value="planner-t5-1"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/Practitioner-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p><b>Support Planner / Phone:</b> Mark Planner / (678) 555 1221</p>
+          </div>
+        </text>
+      <!--  identifier is required by US Core  -->
+        <identifier>
+          <system value="http://hl7.org.fhir/sid/us-npi"/>
+          <value value="9941339108"/>
+        </identifier>
+        <identifier>
+          <system value="http://www.acme.org/practitioners"/>
+          <value value="25456"/>
+        </identifier>
+      <!--  [eLTSS Support Planner Name]  -->
+        <name>
+          <text value="Mark Planner"/>
+          <family value="Planner"/>
+          <given value="Mark"/>
+        </name>
+      <!--  [eLTSS Support Planner Phone Number]  -->
+        <telecom>
+          <system value="phone"/>
+          <value value="(678) 555 1221"/>
+        </telecom>
+      </Practitioner>
+    </resource>
+	<request>
+            <method value="PUT"/>
+            <url value="Practitioner/planner-t5-1"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  3  -->
+    <fullUrl value="http://example.org/eLTSS/caremgr-t5-1"/>
+    <resource>
+      <Practitioner>
+        <id value="caremgr-t5-1"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/Practitioner-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p><b>Plan Monitor / Phone:</b> Sam Monitor / (770) 224 1599</p>
+          </div>
+        </text>
+      <!--  identifier is required by US Core  -->
+        <identifier>
+          <system value="http://hl7.org.fhir/sid/us-npi"/>
+          <value value="9941339109"/>
+        </identifier>
+        <identifier>
+          <system value="http://www.acme.org/practitioners"/>
+          <value value="25457"/>
+        </identifier>
+      <!--  [eLTSS Plan Monitor Name]  -->
+        <name>
+          <text value="Sam Monitor"/>
+          <family value="Monitor"/>
+          <given value="Sam"/>
+        </name>
+      <!--  [eLTSS Plan Monitor Phone Number]  -->
+        <telecom>
+          <system value="phone"/>
+          <value value="(770) 224 1599"/>
+        </telecom>
+      </Practitioner>
+    </resource>
+	<request>
+            <method value="PUT"/>
+            <url value="Practitioner/caremgr-t5-1"/>
+    </request>
+  </entry>
+<!--      The person (Patient) who is the subject of the document.  -->
+  <entry>
+  <!--  4  -->
+    <fullUrl value="http://example.org/eLTSS/patient-t5"/>
+    <resource>
+      <Patient>
+        <id value="patient-t5"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/Patient-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p><b>Person Name:</b> Betsy Johnson</p>
+            <p><b>Person Identifier | Type:</b> 123456ABC | MRN</p>
+            <p><b>Person Phone:</b> 555-555-2001</p>
+            <p><b>Person Date of Birth:</b> 1957-11-07</p>
+            <p><b>Person Address:</b> 7247 Breen St. Springfield IL 62707</p>
+            <p><b>Emergency Contact Name:</b> Jane Daughter</p>
+            <p><b>Emergency Contact Relationship:</b> daughter</p>
+            <p><b>Emergency Contact Phone Number:</b> (770) 224 1544</p>
+          </div>
+        </text>
+      <!--  [eLTSS Person Identifier] & [eLTSS Person Identifier Type]   -->
+        <identifier>
+          <type>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+              <code value="MR"/>
+            </coding>
+          </type>
+          <system value="http://www.example.org/Codesystem"/>
+          <value value="123456ABC"/>
+        </identifier>
+      <!--   [eLTSS Person Name]   -->
+        <name>
+          <text value="Betsy Johnson"/>
+          <family value="Johnson"/>
+          <given value="Betsy"/>
+        </name>
+      <!--   [eLTSS Person Phone Number]   -->
+        <telecom>
+          <system value="phone"/>
+          <value value="555-555-2001"/>
+		  <use value="mobile"/>
+        </telecom>
+        <gender value="female"/>
+      <!--   [eLTSS Person Date of Birth]   -->
+        <birthDate value="1957-11-07"/>
+      <!--   [eLTSS Person Address]   -->
+        <address>
+          <text value="7247 Breen St., Springfield, IL 62707"/>
+          <line value="7247 Breen St."/>
+          <city value="Springfield"/>
+          <district value="Sangamon"/>
+          <state value="IL"/>
+          <postalCode value="62707"/>
+        </address>
+      <!--   [eLTSS Emergency Contact Name] & [eLTSS Emergency Contact Relationship] & [eLTSS Emergency Contact Phone Number]  -->
+        <contact>
+          <relationship>
+          <!--  code value indicates emergency contact  -->
+            <coding>
+              <system value="http://terminology.hl7.org/fhir/v2/0131"/>
+              <code value="C"/>
+            </coding>
+          </relationship>
+          <relationship>
+          <!--  code value indicates daughter  -->
+            <coding>
+              <system value="http://terminology.hl7.org/fhir/v3/RoleCode"/>
+              <code value="DAUC"/>
+            </coding>
+          </relationship>
+          <name>
+            <text value="Debra Johnson"/>
+            <family value="Johnson"/>
+            <given value="Debra"/>
+          </name>
+          <telecom>
+            <system value="phone"/>
+            <value value="555-555-1212"/>
+          </telecom>
+        </contact>
+      </Patient>
+    </resource>
+	<request>
+            <method value="PUT"/>
+            <url value="Patient/patient-t5"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  5  -->
+    <fullUrl value="http://example.org/eLTSS/episode-t5-1"/>
+  <!--   links the care plan to the plan monitor/case manager   -->
+  <!--   [eLTSS Plan Monitor Name] & [eLTSS Plan Monitor Phone Number]   -->
+    <resource>
+      <EpisodeOfCare>
+        <id value="episode-t5-1"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/EpisodeOfCare-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: episode-t5-1</p><p><b>meta</b>: </p><p><b>status</b>: active</p><p><b>patient</b>: <a href="Patient/patient-t5">Patient/patient-t5</a></p><p><b>careManager</b>: <a href="Practitioner/caremgr-t5-1">Practitioner/caremgr-t5-1</a></p></div>
+        </text>
+        <status value="active"/>
+        <patient>
+          <reference value="Patient/patient-t5"/>
+        </patient>
+        <careManager>
+          <reference value="Practitioner/caremgr-t5-1"/>
+        </careManager>
+      </EpisodeOfCare>
+    </resource>
+	<request>
+            <method value="PUT"/>
+            <url value="EpisodeOfCare/episode-t5-1"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  6  -->
+    <fullUrl value="http://example.org/eLTSS/careplan-t5-2"/>
+  <!--   [eLTSS Emergency Backup Plan]   -->
+    <resource>
+      <CarePlan>
+        <id value="careplan-t5-2"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/CarePlan-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: careplan-t5-2</p><p><b>meta</b>: </p><p><b>partOf</b>: <a href="CarePlan/careplan-t5-1">CarePlan/careplan-t5-1</a></p><p><b>status</b>: active</p><p><b>intent</b>: plan</p><p><b>category</b>: Assessment and Plan of Treatment <span style="background: LightGoldenRodYellow">(Details : {http://hl7.org/fhir/us/core/CodeSystem/careplan-category code 'assess-plan' = 'Assessment and Plan of Treatment)</span></p><p><b>description</b>: Snow Emergencies: A shelf stable blizzard meal is delivered to Meals On Wheels clients in early winter. It is to be eaten in the unlikely event of cancellation. Blizzard meals are donated by the Sheboygan Service Club.</p><p><b>subject</b>: <a href="Patient/patient-t5">Patient/patient-t5</a></p></div>
+											   
+        </text>
+      <!--  reference to the "main" care plan  -->
+        <partOf>
+          <reference value="CarePlan/careplan-t5-1"/>
+        </partOf>
+        <status value="active"/>
+        <intent value="plan"/>
+        <category>
+          <coding>
+            <system
+                    value="http://hl7.org/fhir/us/core/CodeSystem/careplan-category"/>
+            <code value="assess-plan"/>
+          </coding>
+        </category>
+        <description
+                     value="Snow Emergencies: A shelf stable blizzard meal is delivered to Meals On Wheels clients in early winter. It is to be eaten in the unlikely event of cancellation. Blizzard meals are donated by the Sheboygan Service Club."/>
+        <subject>
+          <reference value="Patient/patient-t5"/>
+        </subject>
+      </CarePlan>
+    </resource>
+	<request>
+            <method value="PUT"/>
+            <url value="CarePlan/careplan-t5-2"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  7  -->
+    <fullUrl value="http://example.org/eLTSS/goal-t5-1"/>
+  <!--   [eLTSS Goal]   -->
+    <resource>
+      <Goal>
+        <id value="goal-t5-1"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/Goal-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p><b>Person Goal:</b> lose weight</p>
+          </div>
+        </text>
+        <lifecycleStatus value="accepted"/>
+      <!--  status name changed to lifecycleStatus for R4  -->
+        <description>
+          <text value="lose weight"/>
+        </description>
+        <subject>
+          <reference value="Patient/patient-t5"/>
+        </subject>
+      </Goal>
+    </resource>
+	<request>
+            <method value="PUT"/>
+            <url value="Goal/goal-t5-1"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  8  -->
+    <fullUrl value="http://example.org/eLTSS/goal-t5-2"/>
+  <!--   [eLTSS Goal]   -->
+    <resource>
+							 
+      <Goal>
+        <id value="goal-t5-2"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/Goal-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p><b>Person Goal:</b> dance at daughter's wedding</p>
+          </div>
+        </text>
+        <lifecycleStatus value="accepted"/>
+      <!--  status name  changed to lifecycleStatus for R4  -->
+        <description>
+          <text value="dance at daughter&#39;s wedding"/>
+        </description>
+        <subject>
+          <reference value="Patient/patient-t5"/>
+        </subject>
+      </Goal>
+    </resource>
+	<request>
+            <method value="PUT"/>
+            <url value="Goal/goal-t5-2"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  9  -->
+    <fullUrl value="http://example.org/eLTSS/need-t5-1"/>
+  <!--   [eLTSS Assessed Need]   -->
+    <resource>
+      <Condition>
+        <id value="need-t5-1"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/Condition-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p><b>Assessed Need:</b> lack of transportation</p>
+          </div>
+        </text>
+      <!--  US Core requires the use of the Condition Category Codes valueset, which does not have a value  -->
+      <!--  corresponding to "assessed need". The code list is extensible, but for the purposes of this sample  -->
+      <!--  just using the text data element.  -->
+        <clinicalStatus>
+          <coding>
+            <system
+                    value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system
+                    value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system
+                    value="http://hl7.org/fhir/us/eLTSS/CodeSystem/eltss-condition-category-code"/>
+            <code value="assessed-need"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="713458007"/>
+            <display value="Lack of access to transportation (finding)"/>
+          </coding>
+          <text value="lack of transportation"/>
+        </code>
+        <subject>
+          <reference value="Patient/patient-t5"/>
+        </subject>
+      </Condition>
+    </resource>
+	<request>
+       <method value="PUT"/>
+       <url value="Condition/need-t5-1"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  10  -->
+    <fullUrl value="http://example.org/eLTSS/need-t5-2"/>
+  <!--   [eLTSS Assessed Need]   -->
+    <resource>
+      <Condition>
+        <id value="need-t5-2"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/Condition-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p><b>Assessed Need:</b> difficulty in bathing</p>
+          </div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system
+                    value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system
+                    value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system
+                    value="http://hl7.org/fhir/us/eLTSS/CodeSystem/eltss-condition-category-code"/>
+            <code value="assessed-need"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="284807005"/>
+            <display value="Difficulty bathing self (finding)"/>
+          </coding>
+          <text value="difficulty in bathing"/>
+        </code>
+        <subject>
+          <reference value="Patient/patient-t5"/>
+        </subject>
+      </Condition>
+    </resource>
+	<request>
+       <method value="PUT"/>
+       <url value="Condition/need-t5-2"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  11  -->
+    <fullUrl value="http://example.org/eLTSS/need-t5-3"/>
+  <!--   [eLTSS Assessed Need]   -->
+    <resource>
+      <Condition>
+        <id value="need-t5-3"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/Condition-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p><b>Assessed Need:</b> difficulty in dressing</p>
+          </div>
+        </text>
+        <clinicalStatus>
+          <coding>
+            <system
+                    value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system
+                    value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+          </coding>
+        </verificationStatus>
+        <category>
+          <coding>
+            <system
+                    value="http://hl7.org/fhir/us/eLTSS/CodeSystem/eltss-condition-category-code"/>
+            <code value="assessed-need"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="284972002"/>
+            <display value="Difficulty performing dressing activity (finding)"/>
+          </coding>
+          <text value="difficulty in dressing"/>
+        </code>
+        <subject>
+          <reference value="Patient/patient-t5"/>
+        </subject>
+      </Condition>
+    </resource>
+	<request>
+       <method value="PUT"/>
+       <url value="Condition/need-t5-3"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  12  -->
+    <fullUrl value="http://example.org/eLTSS/provider-t5-1"/>
+    <resource>
+      <Practitioner>
+        <id value="provider-t5-1"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/Practitioner-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: provider-t5-1</p><p><b>meta</b>: </p><p><b>identifier</b>: 987654</p><p><b>name</b>: Lisa Performer</p><p><b>telecom</b>: ph: (404) 555 1213</p></div>
+        </text>
+      <!--  identifier is required by US Core  -->
+        <identifier>
+          <system value="http://www.acme.org/practitioners"/>
+          <value value="987654"/>
+        </identifier>
+      <!--  [eLTSS Service Provider Name]  -->
+        <name>
+          <text value="Lisa Performer"/>
+          <family value="Performer"/>
+          <given value="Lisa"/>
+        </name>
+      <!--  [eLTSS Service Provider Phone Number]  -->
+        <telecom>
+          <system value="phone"/>
+          <value value="(404) 555 1213"/>
+        </telecom>
+      </Practitioner>
+    </resource>
+	<request>
+		<method value="PUT"/>
+		<url value="Practitioner/provider-t5-1"/>
+	</request>
+  </entry>
+  <entry>
+  <!--  13  -->
+    <fullUrl value="http://example.org/eLTSS/provider-t5-2"/>
+    <resource>
+      <Organization>
+        <id value="provider-t5-2"/>
+		<meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/Practitioner-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: provider-t5-2</p><p><b>identifier</b>: 24680</p><p><b>name</b>: The Transporter, Inc.</p><p><b>telecom</b>: ph: (404) 555 1313</p><p><b>address</b>: 111 Business Street, Atlanta GA, 30318</p></div>
+        </text>
+      <!--  identifier is required by US Core  -->
+        <identifier>
+          <system value="http://www.acme.org/practitioners"/>
+          <value value="24680"/>
+        </identifier>
+      <!--  [eLTSS Service Provider Name]  -->
+        <name value="The Transporter, Inc."/>
+      <!--  [eLTSS Service Provider Phone Number]  -->
+        <telecom>
+          <system value="phone"/>
+          <value value="(404) 555 1313"/>
+        </telecom>
+      <!--  address is required by US Core  -->
+        <address>
+          <text value="111 Business Street, Atlanta GA, 30318"/>
+        </address>
+      </Organization>
+    </resource>
+	<request>
+       <method value="PUT"/>
+       <url value="Organization/provider-t5-2"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  14  -->
+    <fullUrl value="http://example.org/eLTSS/provider-t5-3"/>
+    <resource>
+      <Practitioner>
+        <id value="provider-t5-3"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/Practitioner-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: provider-t5-3</p><p><b>meta</b>: </p><p><b>identifier</b>: 11223344</p><p><b>name</b>: Bill Driver</p><p><b>telecom</b>: ph: (678) 111 2222</p></div>
+        </text>
+      <!--  identifier is required by US Core  -->
+        <identifier>
+          <system value="http://www.acme.org/practitioners"/>
+          <value value="11223344"/>
+        </identifier>
+      <!--  [eLTSS Service Provider Name]  -->
+        <name>
+          <text value="Bill Driver"/>
+          <family value="Driver"/>
+          <given value="Bill"/>
+        </name>
+      <!--  [eLTSS Service Provider Phone Number]  -->
+        <telecom>
+          <system value="phone"/>
+          <value value="(678) 111 2222"/>
+        </telecom>
+      </Practitioner>
+    </resource>
+	<request>
+       <method value="PUT"/>
+       <url value="Practitioner/provider-t5-3"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  15  -->
+    <fullUrl value="http://example.org/eLTSS/funding-t5-1"/>
+    <resource>
+      <Organization>
+        <id value="funding-t5-1"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p><b>Service Funding Source:</b> Georgia Department of Community Health</p>
+          </div>
+        </text>
+      <!--  identifier is required by US Core  -->
+        <identifier>
+          <value value="ICWP"/>
+        </identifier>
+      <!--  [eLTSS Service Funding Source]  -->
+        <name value="Georgia Department of Community Health"/>
+      <!--  address is required by US Core  -->
+        <address>
+          <text value="2 Main Street, Atlanta GA, 30318"/>
+        </address>
+      </Organization>
+    </resource>
+	<request>
+       <method value="PUT"/>
+       <url value="Organization/funding-t5-1"/>
+    </request>
+  </entry>
+<!--  daughter, who is emergency contact and performing a non-paid service  -->
+  <entry>
+  <!--  16  -->
+    <fullUrl value="http://example.org/eLTSS/relative-t5"/>
+    <resource>
+      <RelatedPerson>
+        <id value="daughter-t5"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: daughter-t5</p><p><b>patient</b>: <a href="Patient/patient-t5">Patient/patient-t5</a></p><p><b>relationship</b>: daughter <span style="background: LightGoldenRodYellow">(Details : {http://terminology.hl7.org/CodeSystem/v3-RoleCode code 'DAUC' = 'daughter)</span></p><p><b>name</b>: Jane Daughter</p></div>
+        </text>
+        <patient>
+          <reference value="Patient/patient-t5"/>
+        </patient>
+        <relationship>
+        <!--  [eLTSS Non-Paid Service Provider Relationship]   -->
+        <!--  code value indicates daughter  -->
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-RoleCode"/>
+            <code value="DAUC"/>
+          </coding>
+        </relationship>
+        <name>
+          <text value="Jane Daughter"/>
+          <family value="Daughter"/>
+          <given value="Jane"/>
+        </name>
+      </RelatedPerson>
+    </resource>
+	<request>
+       <method value="PUT"/>
+       <url value="RelatedPerson/daughter-t5"/>
+    </request>
+  </entry>
+<!--  person's legal guardian  -->
+  <entry>
+  <!--  17  -->
+    <fullUrl value="http://example.org/eLTSS/guardian-t5"/>
+    <resource>
+      <RelatedPerson>
+        <id value="guardian-t5"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: guardian-t5</p><p><b>patient</b>: <a href="Patient/patient-t5">Patient/patient-t5</a></p><p><b>name</b>: William Barrister</p></div>
+        </text>
+        <patient>
+          <reference value="Patient/patient-t5"/>
+        </patient>
+        <name>
+          <text value="William Barrister"/>
+          <family value="Barrister"/>
+          <given value="William"/>
+        </name>
+      </RelatedPerson>
+    </resource>
+	<request>
+       <method value="PUT"/>
+       <url value="RelatedPerson/guardian-t5"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  18  -->
+    <fullUrl value="http://example.org/eLTSS/service-t5-1"/>
+  <!--  Service #1  -->
+    <resource>
+      <ServiceRequest>
+        <id value="service-t5-1"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/ServiceRequest-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p><b>Service Name:</b> Personal care services, per 15 minutes - 5 units per week</p>
+            <p><b>Service Start Date / End Date:</b> 2018-05-01 / 2018-12-31</p>
+          </div>
+        </text>
+        <status value="active"/>
+        <intent value="plan"/>
+      <!--  [eLTSS Service Name]   -->
+        <code>
+          <coding>
+            <system value="urn:oid:2.16.840.1.113883.6.14"/>
+            <code value="T1019"/>
+          </coding>
+          <text value="Personal care services, per 15 minutes"/>
+        </code>
+      <!--  Data below represents 5 quarter hours of service per week  -->
+        <quantityRatio>
+          <numerator>
+          <!--   [eLTSS Service Unit Quantity]   -->
+            <value value="5"/>
+          <!--   [eLTSS Unit of Service Type]   -->
+            <unit value="quarter hour"/>
+          </numerator>
+        <!--  [eLTSS Service Unit Quantity Interval]   -->
+          <denominator>
+            <value value="1"/>
+            <unit value="week"/>
+          </denominator>
+        </quantityRatio>
+      <!--  subject is required by FHIR  -->
+        <subject>
+          <reference value="Patient/patient-t5"/>
+        </subject>
+        <occurrencePeriod>
+        <!--  [eLTSS Service Start Date]  -->
+          <start value="2018-05-01"/>
+        <!--  [eLTSS Service End Date]  -->
+          <end value="2018-12-31"/>
+        </occurrencePeriod>
+        <performer>
+          <reference value="Practitioner/provider-t5-1"/>
+        </performer>
+      <!--  [eLTSS Service Delivery Address]  -->
+        <locationReference>
+          <reference value="Location/location-t5-1"/>
+        </locationReference>
+      </ServiceRequest>
+    </resource>
+	<request>
+       <method value="PUT"/>
+       <url value="ServiceRequest/service-t5-1"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  19  -->
+    <fullUrl value="http://example.org/eLTSS/service-t5-2"/>
+  <!--  Service #2  -->
+    <resource>
+      <ServiceRequest>
+        <id value="service-t5-2"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/ServiceRequest-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p><b>Service Name:</b> Non-emergency transportation; encounter/trip - 10 trips total</p>
+            <p><b>Service Start Date / End Date:</b> 2018-07-01 / 2018-12-31</p>
+          </div>
+        </text>
+      <!--  [eLTSS Self-directed Service Indicator]  -->
+        <extension
+                   url="http://hl7.org/fhir/us/eLTSS/StructureDefinition/eltss-directedBy">
+          <valueCodeableConcept>
+            <text value="self"/>
+          </valueCodeableConcept>
+        </extension>
+        <status value="active"/>
+        <intent value="plan"/>
+      <!--  [eLTSS Service Name]   -->
+        <code>
+          <coding>
+            <system value="urn:oid:2.16.840.1.113883.6.14"/>
+            <code value="T2003"/>
+          </coding>
+          <text value="Non-emergency transportation; encounter/trip"/>
+        </code>
+        <quantityQuantity>
+        <!--   [eLTSS Service Unit Quantity]   -->
+          <value value="10"/>
+        <!--   [eLTSS Unit of Service Type]   -->
+          <unit value="trips"/>
+        </quantityQuantity>
+      <!--  subject is required by FHIR  -->
+        <subject>
+          <reference value="Patient/patient-t5"/>
+        </subject>
+        <occurrencePeriod>
+        <!--  [eLTSS Service Start Date]  -->
+          <start value="2018-07-01"/>
+        <!--  [eLTSS Service End Date]  -->
+          <end value="2018-12-31"/>
+        </occurrencePeriod>
+        <performer>
+          <reference value="Organization/provider-t5-2"/>
+        </performer>
+        <insurance>
+          <reference value="Coverage/coverage-t5-1"/>
+        </insurance>
+        <supportingInfo>
+          <reference value="Claim/claim-t5-1"/>
+        </supportingInfo>
+      <!--   [eLTSS Service Comment]   -->
+        <note>
+          <text
+                value="Service provider will provide a reminder the business day before the trip, and will call when on the way."/>
+        </note>
+      </ServiceRequest>
+    </resource>
+	<request>
+       <method value="PUT"/>
+       <url value="ServiceRequest/service-t5-2"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  20  -->
+    <fullUrl value="http://example.org/eLTSS/service-t5-3"/>
+  <!--  Service #3  -->
+    <resource>
+      <ServiceRequest>
+        <id value="service-t5-3"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/ServiceRequest-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p><b>Service Name:</b> House cleaning - one per week</p>
+            <p><b>Service Start Date / End Date:</b> 2018-05-01 / 2018-12-31</p>
+          </div>
+        </text>
+        <status value="active"/>
+        <intent value="plan"/>
+      <!--  [eLTSS Service Name]   -->
+        <code>
+          <text value="House cleaning"/>
+        </code>
+      <!--  Data below represents 1 visit per 1 week  -->
+        <quantityRatio>
+          <numerator>
+          <!--   [eLTSS Service Unit Quantity]   -->
+            <value value="1"/>
+          <!--   [eLTSS Unit of Service Type]   -->
+            <unit value="visit"/>
+          </numerator>
+        <!--   [eLTSS Service Unit Quantity Interval]   -->
+          <denominator>
+            <value value="1"/>
+            <unit value="week"/>
+          </denominator>
+        </quantityRatio>
+      <!--  subject is required by FHIR  -->
+        <subject>
+          <reference value="Patient/patient-t5"/>
+        </subject>
+        <occurrencePeriod>
+        <!--  [eLTSS Service Start Date]  -->
+          <start value="2018-05-01"/>
+        <!--  [eLTSS Service End Date]  -->
+          <end value="2018-12-31"/>
+        </occurrencePeriod>
+        <performer>
+          <reference value="RelatedPerson/daughter-t5"/>
+        </performer>
+      </ServiceRequest>
+    </resource>
+	<request>
+       <method value="PUT"/>
+       <url value="ServiceRequest/service-t5-3"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  21  -->
+    <fullUrl value="http://example.org/eLTSS/strength-t5-1"/>
+  <!--   [eLTSS Strength]   -->
+    <resource>
+      <Observation>
+        <id value="strength-t5-1"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/Observation-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p><b>Person Strength:</b> Able to manage her bills. Has strong family support.</p>
+          </div>
+        </text>
+        <status value="final"/>
+        <code>
+          <coding>
+            <system
+                    value="http://hl7.org/us/eLTSS/CodeSystem/eltss-observation-code"/>
+            <code value="strength"/>
+          </coding>
+        </code>
+        <valueString
+                     value="Able to manage her bills. Has strong family support."/>
+      </Observation>
+    </resource>
+		<request>
+       <method value="PUT"/>
+       <url value="Observation/strength-t5-1"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  22  -->
+    <fullUrl value="http://example.org/eLTSS/pref-t5-1"/>
+  <!--   [eLTSS Preference]   -->
+    <resource>
+								   
+      <Observation>
+        <id value="pref-t5-1"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/Observation-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p><b>Person Preference:</b> Accessing the ICWP Waiver for her current service needs, and would like to remain on ICWP and continue with her current services.</p>
+          </div>
+        </text>
+        <status value="final"/>
+        <code>
+          <coding>
+            <system
+                    value="http://hl7.org/us/eLTSS/CodeSystem/eltss-observation-code"/>
+            <code value="preference"/>
+          </coding>
+        </code>
+        <valueString
+                     value="Accessing the ICWP Waiver for her current service needs, and would like to remain on ICWP and continue with her current services."/>
+      </Observation>
+    </resource>
+	<request>
+       <method value="PUT"/>
+       <url value="Observation/pref-t5-1"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  23  -->
+    <fullUrl value="http://example.org/eLTSS/risk-t5-1"/>
+    <resource>
+      <RiskAssessment>
+        <id value="risk-t5-1"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/RiskAssessment-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: risk-t5-1</p><p><b>meta</b>: </p><p><b>status</b>: final</p><p><b>subject</b>: <a href="Patient/patient-t5">Patient/patient-t5</a></p><h3>Predictions</h3><table class="grid"><tr><td>-</td><td><b>Outcome</b></td></tr><tr><td>*</td><td>At risk of falls <span style="background: LightGoldenRodYellow">(Details : {SNOMED CT code '129839007' = 'At risk of falls)</span></td></tr></table><p><b>mitigation</b>: risk management plan text goes here</p></div>
+        </text>
+        <status value="final"/>
+      <!--  subject is required by FHIR (starting with 3.4.0)  -->
+        <subject>
+          <reference value="Patient/patient-t5"/>
+        </subject>
+      <!--  [eLTSS Identified Risk]   -->
+        <prediction>
+          <outcome>
+            <coding>
+            <!--  code indicates at risk for falls  -->
+            <!--               <system value="urn:oid:2.16.840.1.113883.6.96"/>    -->
+              <system value="http://snomed.info/sct"/>
+              <code value="129839007"/>
+            </coding>
+          </outcome>
+        </prediction>
+      <!--  [eLTSS Risk Management Plan]   -->
+        <mitigation value="risk management plan text goes here"/>
+      </RiskAssessment>
+    </resource>
+	<request>
+       <method value="PUT"/>
+       <url value="RiskAssessment/risk-t5-1"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  24  -->
+    <fullUrl value="http://example.org/eLTSS/questionnaire-t5"/>
+    <resource>
+      <Questionnaire>
+        <id value="questionnaire-t5"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/Questionnaire-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: questionnaire-t5</p><p><b>meta</b>: </p><p><b>name</b>: Questionnaire-t5</p><p><b>status</b>: active</p><blockquote><p><b>item</b></p><p><b>linkId</b>: q1</p><p><b>text</b>: Did you choose the setting in which you reside?</p><p><b>type</b>: boolean</p></blockquote><blockquote><p><b>item</b></p><p><b>linkId</b>: q2</p><p><b>text</b>: What alternative home and community-based settings were considered?</p><p><b>type</b>: string</p></blockquote><blockquote><p><b>item</b></p><p><b>linkId</b>: q3</p><p><b>text</b>: Were you given a choice of services outlined in the plan?</p><p><b>type</b>: boolean</p></blockquote><blockquote><p><b>item</b></p><p><b>linkId</b>: q4</p><p><b>text</b>: Did you participate in the selection of services outlined in the plan?</p><p><b>type</b>: boolean</p></blockquote><blockquote><p><b>item</b></p><p><b>linkId</b>: q5</p><p><b>text</b>: Do you agree to the services outlined in the plan?</p><p><b>type</b>: boolean</p></blockquote><blockquote><p><b>item</b></p><p><b>linkId</b>: q6</p><p><b>text</b>: Were you offerred a choice of providers for each service?</p><p><b>type</b>: boolean</p></blockquote><blockquote><p><b>item</b></p><p><b>linkId</b>: q7</p><p><b>text</b>: Do you feel you made an informed choice in selecting the provider for each service?</p><p><b>type</b>: boolean</p></blockquote></div>
+        </text>
+        <name value="Questionnaire-t5"/>
+        <status value="active"/>
+        <item>
+          <linkId value="q1"/>
+          <text value="Did you choose the setting in which you reside?"/>
+          <type value="boolean"/>
+        </item>
+        <item>
+          <linkId value="q2"/>
+          <text
+                value="What alternative home and community-based settings were considered?"/>
+          <type value="string"/>
+        </item>
+        <item>
+          <linkId value="q3"/>
+          <text
+                value="Were you given a choice of services outlined in the plan?"/>
+          <type value="boolean"/>
+        </item>
+        <item>
+          <linkId value="q4"/>
+          <text
+                value="Did you participate in the selection of services outlined in the plan?"/>
+          <type value="boolean"/>
+        </item>
+        <item>
+          <linkId value="q5"/>
+          <text value="Do you agree to the services outlined in the plan?"/>
+          <type value="boolean"/>
+        </item>
+        <item>
+          <linkId value="q6"/>
+          <text
+                value="Were you offerred a choice of providers for each service?"/>
+          <type value="boolean"/>
+        </item>
+        <item>
+          <linkId value="q7"/>
+          <text
+                value="Do you feel you made an informed choice in selecting the provider for each service?"/>
+          <type value="boolean"/>
+        </item>
+      </Questionnaire>
+    </resource>
+	<request>
+       <method value="PUT"/>
+       <url value="Questionnaire/questionnaire-t5"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  25  -->
+    <fullUrl value="http://example.org/eLTSS/questionnaireresponse-t5"/>
+    <resource>
+      <QuestionnaireResponse>
+        <id value="questionnaireresponse-t5"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: questionnaireresponse-t5</p><p><b>questionnaire</b>: <a href="http://example.org/eLTSS/questionnaire-t5">http://example.org/eLTSS/questionnaire-t5</a></p><p><b>status</b>: completed</p><blockquote><p><b>item</b></p><p><b>linkId</b>: q1</p><h3>Answers</h3><table class="grid"><tr><td>-</td><td><b>Value[x]</b></td></tr><tr><td>*</td><td>true</td></tr></table></blockquote><blockquote><p><b>item</b></p><p><b>linkId</b>: q2</p><h3>Answers</h3><table class="grid"><tr><td>-</td><td><b>Value[x]</b></td></tr><tr><td>*</td><td>Assisted living facility</td></tr></table></blockquote><blockquote><p><b>item</b></p><p><b>linkId</b>: q3</p><h3>Answers</h3><table class="grid"><tr><td>-</td><td><b>Value[x]</b></td></tr><tr><td>*</td><td>true</td></tr></table></blockquote><blockquote><p><b>item</b></p><p><b>linkId</b>: q4</p><h3>Answers</h3><table class="grid"><tr><td>-</td><td><b>Value[x]</b></td></tr><tr><td>*</td><td>true</td></tr></table></blockquote><blockquote><p><b>item</b></p><p><b>linkId</b>: q5</p><h3>Answers</h3><table class="grid"><tr><td>-</td><td><b>Value[x]</b></td></tr><tr><td>*</td><td>true</td></tr></table></blockquote><blockquote><p><b>item</b></p><p><b>linkId</b>: q6</p><h3>Answers</h3><table class="grid"><tr><td>-</td><td><b>Value[x]</b></td></tr><tr><td>*</td><td>true</td></tr></table></blockquote><blockquote><p><b>item</b></p><p><b>linkId</b>: q7</p><h3>Answers</h3><table class="grid"><tr><td>-</td><td><b>Value[x]</b></td></tr><tr><td>*</td><td>true</td></tr></table></blockquote></div>
+        </text>
+        <questionnaire value="http://example.org/eLTSS/Questionnaire/questionnaire-t5"/>
+        <status value="completed"/>
+      <!--  [eLTSS Person Setting Choice Indicator]   -->
+        <item>
+          <linkId value="q1"/>
+          <answer>
+            <valueBoolean value="true"/>
+          </answer>
+        </item>
+      <!--  [eLTSS Person Setting Choice Options]   -->
+        <item>
+          <linkId value="q2"/>
+          <answer>
+            <valueString value="Assisted living facility"/>
+          </answer>
+        </item>
+      <!--  [eLTSS Service Options Given Indicator]   -->
+        <item>
+          <linkId value="q3"/>
+          <answer>
+            <valueBoolean value="true"/>
+          </answer>
+        </item>
+      <!--  [eLTSS Service Selection Indicator]   -->
+        <item>
+          <linkId value="q4"/>
+          <answer>
+            <valueBoolean value="true"/>
+          </answer>
+        </item>
+      <!--  [eLTSS Service Plan Agreement Indicator]   -->
+        <item>
+          <linkId value="q5"/>
+          <answer>
+            <valueBoolean value="true"/>
+          </answer>
+        </item>
+      <!--  [eLTSS Service Provider Options Given Indicator]   -->
+        <item>
+          <linkId value="q6"/>
+          <answer>
+            <valueBoolean value="true"/>
+          </answer>
+        </item>
+      <!--  [eLTSS Service Provider Selection Agreement Indicator]   -->
+        <item>
+          <linkId value="q7"/>
+          <answer>
+            <valueBoolean value="true"/>
+          </answer>
+        </item>
+      </QuestionnaireResponse>
+    </resource>
+	<request>
+       <method value="PUT"/>
+       <url value="QuestionnaireResponse/questionnaireresponse-t5"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  26  -->
+    <fullUrl value="http://example.org/eLTSS/contract-t5-1"/>
+    <resource>
+      <Contract>
+        <id value="contract-t5-1"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/Contract-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: contract-t5-1</p><p><b>meta</b>: </p><blockquote><p><b>signer</b></p><p><b>type</b>: Patient (Details: http://terminology.hl7.org/CodeSystem/contractsignertypecodes code PAT = 'Patient', stated as 'null')</p><p><b>party</b>: <a href="Patient/patient-t5">Patient/patient-t5</a></p><p><b>signature</b>: </p></blockquote><blockquote><p><b>signer</b></p><p><b>type</b>: Guardian (Details: http://terminology.hl7.org/CodeSystem/contractsignertypecodes code GUARD = 'Guardian', stated as 'null')</p><p><b>party</b>: <a href="RelatedPerson/guardian-t5">RelatedPerson/guardian-t5</a></p><p><b>signature</b>: </p></blockquote><blockquote><p><b>signer</b></p><p><b>type</b>: Author (Details: http://terminology.hl7.org/CodeSystem/contractsignertypecodes code AUT = 'Author', stated as 'null')</p><p><b>party</b>: <a href="Practitioner/planner-t5-1">Practitioner/planner-t5-1</a></p><p><b>signature</b>: </p></blockquote><blockquote><p><b>signer</b></p><p><b>type</b>: Healthcare Provider (Details: http://terminology.hl7.org/CodeSystem/contractsignertypecodes code HPROV = 'Healthcare Provider', stated as 'null')</p><p><b>party</b>: <a href="Practitioner/provider-t5-1">Practitioner/provider-t5-1</a></p><p><b>signature</b>: </p></blockquote><blockquote><p><b>signer</b></p><p><b>type</b>: Healthcare Provider (Details: http://terminology.hl7.org/CodeSystem/contractsignertypecodes code HPROV = 'Healthcare Provider', stated as 'null')</p><p><b>party</b>: <a href="Organization/provider-t5-2">Organization/provider-t5-2</a></p><p><b>signature</b>: </p></blockquote><blockquote><p><b>signer</b></p><p><b>type</b>: Healthcare Provider (Details: http://terminology.hl7.org/CodeSystem/contractsignertypecodes code HPROV = 'Healthcare Provider', stated as 'null')</p><p><b>party</b>: <a href="RelatedPerson/daughter-t5">RelatedPerson/daughter-t5</a></p><p><b>signature</b>: </p></blockquote></div>
+        </text>
+      <!--  [eLTSS Person Signature], [eLTSS Person Printed Name], [eLTSS Person Signature Date]   -->
+        <signer>
+          <type>
+            <system
+                    value="http://terminology.hl7.org/CodeSystem/contractsignertypecodes"/>
+            <code value="PAT"/>
+          </type>
+          <party>
+            <reference value="Patient/patient-t5"/>
+          </party>
+          <signature>
+            <type>
+              <system value="urn:iso-astm:E1762-95:2013"/>
+              <code value="1.2.840.10065.1.12.1.7"/>
+            </type>
+            <when value="2018-04-02T03:00:00Z"/>
+            <who>
+              <reference value="Patient/patient-t5"/>
+            </who>
+          <!--  note that all signature blobs in the sample are identical, and are base64 versions of a Windows icon  -->
+            <data
+                  value="R0lGODlhIAAgALMAADNmmWNjnGOcnJycnJzOnM7OnP///////////////////////////////////////yH5BAEAAAUALAAAAAAgACAAAARosMhJq704680l6OD0fSFHFmd5pai6vi7FerGYzWAK7HKs8zYVazcUVojH0gyZzFmYvQ4OGtXgUMDn5kqtwlZZLeaKJXOtYbG31lrXdKb0lyySi+l1PE1v5CtpbE0eRISFhod+gYoXEQAAOw=="/>
+          </signature>
+        </signer>
+      <!--  [eLTSS Guardian/Legal Representative Signature], [eLTSS Guardian/Legal Representative Printed Name],  -->
+      <!--  [eLTSS Guardian/Legal Representative Signature Date]   -->
+        <signer>
+          <type>
+            <system
+                    value="http://terminology.hl7.org/CodeSystem/contractsignertypecodes"/>
+            <code value="GUARD"/>
+          </type>
+          <party>
+            <reference value="RelatedPerson/guardian-t5"/>
+          </party>
+          <signature>
+            <type>
+              <system value="urn:iso-astm:E1762-95:2013"/>
+              <code value="1.2.840.10065.1.12.1.7"/>
+            </type>
+            <when value="2018-04-02T03:00:00Z"/>
+            <who>
+              <reference value="RelatedPerson/guardian-t5"/>
+            </who>
+          <!--  note that all signature blobs in the sample are identical, and are base64 versions of a Windows icon  -->
+            <data
+                  value="R0lGODlhIAAgALMAADNmmWNjnGOcnJycnJzOnM7OnP///////////////////////////////////////yH5BAEAAAUALAAAAAAgACAAAARosMhJq704680l6OD0fSFHFmd5pai6vi7FerGYzWAK7HKs8zYVazcUVojH0gyZzFmYvQ4OGtXgUMDn5kqtwlZZLeaKJXOtYbG31lrXdKb0lyySi+l1PE1v5CtpbE0eRISFhod+gYoXEQAAOw=="/>
+          </signature>
+        </signer>
+      <!--  [eLTSS Support Planner Signature], [eLTSS Support Planner Printed Name], [eLTSS Support Planner Signature Date]   -->
+        <signer>
+          <type>
+            <system
+                    value="http://terminology.hl7.org/CodeSystem/contractsignertypecodes"/>
+            <code value="AUT"/>
+          </type>
+          <party>
+            <reference value="Practitioner/planner-t5-1"/>
+          </party>
+          <signature>
+            <type>
+              <system value="urn:iso-astm:E1762-95:2013"/>
+              <code value="1.2.840.10065.1.12.1.1"/>
+            </type>
+            <when value="2018-04-02T03:00:00Z"/>
+            <who>
+              <reference value="Practitioner/planner-t5-1"/>
+            </who>
+          <!--  note that all signature blobs in the sample are identical, and are base64 versions of a Windows icon  -->
+            <data
+                  value="R0lGODlhIAAgALMAADNmmWNjnGOcnJycnJzOnM7OnP///////////////////////////////////////yH5BAEAAAUALAAAAAAgACAAAARosMhJq704680l6OD0fSFHFmd5pai6vi7FerGYzWAK7HKs8zYVazcUVojH0gyZzFmYvQ4OGtXgUMDn5kqtwlZZLeaKJXOtYbG31lrXdKb0lyySi+l1PE1v5CtpbE0eRISFhod+gYoXEQAAOw=="/>
+          </signature>
+        </signer>
+      <!--  Service Provider #1  -->
+      <!--  [eLTSS Service Provider Signature], [eLTSS Service Provider Printed Name], [eLTSS Service Provider Signature Date]   -->
+        <signer>
+          <type>
+            <system
+                    value="http://terminology.hl7.org/CodeSystem/contractsignertypecodes"/>
+            <code value="HPROV"/>
+          </type>
+          <party>
+            <reference value="Practitioner/provider-t5-1"/>
+          </party>
+          <signature>
+            <type>
+              <system value="urn:iso-astm:E1762-95:2013"/>
+              <code value="1.2.840.10065.1.12.1.7"/>
+            </type>
+            <when value="2018-04-02T03:00:00Z"/>
+            <who>
+              <reference value="Practitioner/provider-t5-1"/>
+            </who>
+          <!--  note that all signature blobs in the sample are identical, and are base64 versions of a Windows icon  -->
+            <data
+                  value="R0lGODlhIAAgALMAADNmmWNjnGOcnJycnJzOnM7OnP///////////////////////////////////////yH5BAEAAAUALAAAAAAgACAAAARosMhJq704680l6OD0fSFHFmd5pai6vi7FerGYzWAK7HKs8zYVazcUVojH0gyZzFmYvQ4OGtXgUMDn5kqtwlZZLeaKJXOtYbG31lrXdKb0lyySi+l1PE1v5CtpbE0eRISFhod+gYoXEQAAOw=="/>
+          </signature>
+        </signer>
+      <!--  Service Provider #2  -->
+      <!--  [eLTSS Service Provider Signature], [eLTSS Service Provider Printed Name], [eLTSS Service Provider Signature Date]   -->
+        <signer>
+          <type>
+            <system
+                    value="http://terminology.hl7.org/CodeSystem/contractsignertypecodes"/>
+            <code value="HPROV"/>
+          </type>
+          <party>
+            <reference value="Organization/provider-t5-2"/>
+          </party>
+          <signature>
+            <type>
+              <system value="urn:iso-astm:E1762-95:2013"/>
+              <code value="1.2.840.10065.1.12.1.7"/>
+            </type>
+            <when value="2018-04-02T03:00:00Z"/>
+          <!--  In this example, the service provider is the transportation company, and the signer is a representative of that company  -->
+            <who>
+              <reference value="Organization/provider-t5-2"/>
+            </who>
+          <!--  note that all signature blobs in the sample are identical, and are base64 versions of a Windows icon  -->
+            <data
+                  value="R0lGODlhIAAgALMAADNmmWNjnGOcnJycnJzOnM7OnP///////////////////////////////////////yH5BAEAAAUALAAAAAAgACAAAARosMhJq704680l6OD0fSFHFmd5pai6vi7FerGYzWAK7HKs8zYVazcUVojH0gyZzFmYvQ4OGtXgUMDn5kqtwlZZLeaKJXOtYbG31lrXdKb0lyySi+l1PE1v5CtpbE0eRISFhod+gYoXEQAAOw=="/>
+          </signature>
+        </signer>
+      <!--  Service Provider #3  -->
+      <!--  [eLTSS Service Provider Signature], [eLTSS Service Provider Printed Name], [eLTSS Service Provider Signature Date]   -->
+        <signer>
+          <type>
+            <system
+                    value="http://terminology.hl7.org/CodeSystem/contractsignertypecodes"/>
+            <code value="HPROV"/>
+          </type>
+          <party>
+            <reference value="RelatedPerson/daughter-t5"/>
+          </party>
+          <signature>
+            <type>
+              <system value="urn:iso-astm:E1762-95:2013"/>
+              <code value="1.2.840.10065.1.12.1.7"/>
+            </type>
+            <when value="2018-04-02T03:00:00Z"/>
+            <who>
+              <reference value="RelatedPerson/daughter-t5"/>
+            </who>
+          <!--  note that all signature blobs in the sample are identical, and are base64 versions of a Windows icon  -->
+            <data
+                  value="R0lGODlhIAAgALMAADNmmWNjnGOcnJycnJzOnM7OnP///////////////////////////////////////yH5BAEAAAUALAAAAAAgACAAAARosMhJq704680l6OD0fSFHFmd5pai6vi7FerGYzWAK7HKs8zYVazcUVojH0gyZzFmYvQ4OGtXgUMDn5kqtwlZZLeaKJXOtYbG31lrXdKb0lyySi+l1PE1v5CtpbE0eRISFhod+gYoXEQAAOw=="/>
+          </signature>
+        </signer>
+      </Contract>
+    </resource>
+	<request>
+       <method value="PUT"/>
+       <url value="Contract/contract-t5-1"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  27  -->
+    <fullUrl value="http://example.org/eLTSS/location-t5-1"/>
+    <resource>
+      <Location>
+        <id value="location-t5-1"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/Location-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: location-t5-1</p><p><b>meta</b>: </p><p><b>name</b>: In Home</p><p><b>address</b>: 2222 Peachtree Street, Atlanta GA, 30318</p></div>
+        </text>
+        <name value="In Home"/>
+      <!--  [eLTSS Service Delivery Address]   -->
+        <address>
+          <text value="2222 Peachtree Street, Atlanta GA, 30318"/>
+        </address>
+      </Location>
+    </resource>
+	<request>
+       <method value="PUT"/>
+       <url value="Location/location-t5-1"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  28  -->
+    <fullUrl value="http://example.org/eLTSS/coverage-t5-1"/>
+    <resource>
+      <Coverage>
+        <id value="coverage-t5-1"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: coverage-t5-1</p><p><b>status</b>: active</p><p><b>beneficiary</b>: <a href="Patient/patient-t5">Patient/patient-t5</a></p><p><b>payor</b>: <a href="Organization/funding-t5-1">Organization/funding-t5-1</a></p></div>
+        </text>
+      <!--  Links to the eLTSS Service Funding Source   -->
+        <status value="active"/>
+        <beneficiary>
+          <reference value="Patient/patient-t5"/>
+        </beneficiary>
+        <payor>
+          <reference value="Organization/funding-t5-1"/>
+        </payor>
+      </Coverage>
+    </resource>
+	<request>
+       <method value="PUT"/>
+       <url value="Coverage/coverage-t5-1"/>
+    </request>
+  </entry>
+  <entry>
+  <!--  29  -->
+    <fullUrl value="http://example.org/eLTSS/claim-t5-1"/>
+    <resource>
+      <Claim>
+        <id value="claim-t5-1"/>
+        <meta>
+          <profile
+                   value="http://hl7.org/fhir/us/eLTSS/StructureDefinition/Claim-eltss"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: claim-t5-1</p><p><b>meta</b>: </p><p><b>status</b>: active</p><p><b>type</b>: Professional <span style="background: LightGoldenRodYellow">(Details : {http://terminology.hl7.org/CodeSystem/claim-type code 'professional' = 'Professional)</span></p><p><b>use</b>: claim</p><p><b>patient</b>: <a href="Patient/patient-t5">Patient/patient-t5</a></p><p><b>created</b>: Jan 1, 2019, 12:00:00 AM</p><p><b>provider</b>: <a href="Organization/funding-t5-1">Organization/funding-t5-1</a></p><p><b>priority</b>: Normal <span style="background: LightGoldenRodYellow">(Details : {http://terminology.hl7.org/CodeSystem/processpriority code 'normal' = 'Normal)</span></p><h3>Insurances</h3><table class="grid"><tr><td>-</td><td><b>Sequence</b></td><td><b>Focal</b></td><td><b>Coverage</b></td></tr><tr><td>*</td><td>1</td><td>true</td><td><a href="Coverage/coverage-t5-1">Coverage/coverage-t5-1</a></td></tr></table><h3>Items</h3><table class="grid"><tr><td>-</td><td><b>Sequence</b></td><td><b>ProductOrService</b></td><td><b>UnitPrice</b></td><td><b>Net</b></td></tr><tr><td>*</td><td>1</td><td>Exam, comp, primary <span style="background: LightGoldenRodYellow">(Details : {http://terminology.hl7.org/CodeSystem/ex-USCLS code '1101' = 'Exam, comp, primary)</span></td><td/><td/></tr></table></div>
+        </text>
+        <status value="active"/>
+        <type>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/claim-type"/>
+            <code value="professional"/>
+          </coding>
+        </type>
+        <use value="claim"/>
+        <patient>
+          <reference value="Patient/patient-t5"/>
+        </patient>
+        <created value="2019-01-01"/>
+        <provider>
+          <reference value="Organization/funding-t5-1"/>
+        </provider>
+        <priority>
+          <coding>
+            <system
+                    value="http://terminology.hl7.org/CodeSystem/processpriority"/>
+            <code value="normal"/>
+          </coding>
+        </priority>
+        <insurance>
+          <sequence value="1"/>
+          <focal value="true"/>
+          <coverage>
+            <reference value="Coverage/coverage-t5-1"/>
+          </coverage>
+        </insurance>
+        <item>
+          <sequence value="1"/>
+          <productOrService>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/ex-USCLS"/>
+              <code value="1101"/>
+            </coding>
+          </productOrService>
+        <!--  eLTSS Service Rate per Unit]   -->
+          <unitPrice>
+            <value value="60.00"/>
+          </unitPrice>
+        <!--  eLTSS Total Cost of Service]   -->
+          <net>
+            <value value="600.00"/>
+          </net>
+        </item>
+      </Claim>
+    </resource>
+	<request>
+       <method value="PUT"/>
+       <url value="Claim/claim-t5-1"/>
+    </request>
+  </entry>
+</Bundle>

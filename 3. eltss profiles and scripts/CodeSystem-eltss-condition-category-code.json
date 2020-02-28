@@ -1,0 +1,23 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "eltss-condition-category-code",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>eLTSS Condition Category Codes</h2><div><p>Additional code for Assessed Need for Condition Category element</p>\n</div><p>This code system http://hl7.org/fhir/us/eLTSS/CodeSystem/eltss-condition-category-code defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">assessed-need<a name=\"eltss-condition-category-code-assessed-need\"> </a></td><td>Assessed Need</td><td>The clinical and/or community-based necessity or desire as identified through an assessment that should be addressed by a service.</td></tr></table></div>"
+  },
+  "url": "http://hl7.org/fhir/us/eLTSS/CodeSystem/eltss-condition-category-code",
+  "name": "ELTSS_Condition_Category_Codes",
+  "title": "eLTSS Condition Category Codes",
+  "status": "draft",
+  "experimental": false,
+  "date": "2019-09-12T12:56:22-04:00",
+  "description": "Additional code for Assessed Need for Condition Category element",
+  "content": "complete",
+  "concept": [
+    {
+      "code": "assessed-need",
+      "display": "Assessed Need",
+      "definition": "The clinical and/or community-based necessity or desire as identified through an assessment that should be addressed by a service."
+    }
+  ]
+}
