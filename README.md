@@ -1,8 +1,12 @@
 # eLTSS-Reference-Implementation
 
+## Overview
+
 This initiative is an ONC-CMS partnership focusing on the identification and harmonization of electronic standards that can enable the creation, exchange and re-use of interoperable service plans for use by health care and community-based long-term services and supports providers, payers and the individuals they serve. These plans can help to improve the coordination of health and social services that support an individual’s mental and physical health.
 
-This reference implementation is for the eLTSS FHIR Implementation Guide (IG) Release 1 - US Realm.
+## Reference Implementation
+
+The eLTSS Reference Implementation supports the establishment of an eLTSS FHIR R4 server which implements the eLTSS FHIR Implementation Guide (Electronic Long-Term Services and Supports (eLTSS) Release 1 - US Realm FHIR Implementation Guide http://hl7.org/fhir/us/eltss/) and provides five eLTSS sample data bundles for testing. 
 
 ## Prerequisite Requirements:
 1.	Windows Server 2012 or newer on dedicated server
@@ -25,6 +29,10 @@ This reference implementation is for the eLTSS FHIR Implementation Guide (IG) Re
     3. Minimize but do not close this process window while the HAPI-FHIR Server is running.
 3. Confirm HAPI FHIR Server 3.8.0 is installed
     1. Open web browser and launch URL: http://localhost:8080/hapi-fhir-jpaserver/
+        | Server | HAPI FHIR R4 Server |
+        | Software | HAPI FHIR Server - 3.8.0 |
+        | FHIR Base | http://localhost:8080/hapi-fhir-jpaserver/fhir/ |
+
 4. Open folder 2. us-core-fhirr4 profiles and scripts
     1. Run curlscript.bat to install us-core-fhirr4 profiles and scripts
     2. Confirm us-core-fhirr4 profiles and scripts install - Restart Jetty Server
@@ -32,6 +40,9 @@ This reference implementation is for the eLTSS FHIR Implementation Guide (IG) Re
         2. Start the Jetty Server.  Within the Command Processor Window run the following command: `mvn jetty:run` (minimize but do not close this process window when finished)
         3. Open web browser and launch url: http://localhost:8080/hapi-fhir-jpaserver/
         4. Notice that there are now Resources that have some numbers next to them showing how many records have been posted to the resource.
+        
+
+
 5. Open folder 3. eltss profiles and scripts
     1. Run curlscript.bat to install eltss profiles and scripts install eltss profiles and scripts
     2. Confirm eltss profiles and scripts install - Restart Jetty Server 
@@ -39,6 +50,9 @@ This reference implementation is for the eLTSS FHIR Implementation Guide (IG) Re
         2. Start the Jetty Server.  Within the Command Processor Window run the following command: `mvn jetty:run` (minimize but do not close this process window when finished)
         3. Open web browser and launch url: http://localhost:8080/hapi-fhir-jpaserver/
         4. Notice that there are now Resources that have some numbers next to them showing how many records have been posted to the resource
+        ![alt text](https://github.com/ "Logo Title Text 1")
+
+
 6. Open folder 4. eltss test transactions and scripts
     1. Run curlscript.bat to install eltss test transactions and scripts
     2. Confirm eltss test transactions and scripts install - Restart Jetty Server 
@@ -46,6 +60,9 @@ This reference implementation is for the eLTSS FHIR Implementation Guide (IG) Re
         2. Start the Jetty Server.  Within the Command Processor Window run the following command: `mvn jetty:run` (minimize but do not close this process window when finished)
         3. Open web browser and launch url: http://localhost:8080/hapi-fhir-jpaserver/
         4. Notice that there are now Resources that have some numbers next to them showing how many records have been posted to the resource
+
+
+
 7. End. eLTSS HAPI FHIR Server 3.8.0 has been successfully installed.  
 
 
