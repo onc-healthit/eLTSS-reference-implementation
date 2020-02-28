@@ -8,7 +8,7 @@ This initiative is an ONC-CMS partnership focusing on the identification and har
 
 The eLTSS Reference Implementation supports the establishment of an eLTSS FHIR R4 server which implements the eLTSS FHIR Implementation Guide (Electronic Long-Term Services and Supports (eLTSS) Release 1 - US Realm FHIR Implementation Guide http://hl7.org/fhir/us/eltss/) and provides five eLTSS sample data bundles for testing. 
 
-## Prerequisite Requirements:
+### Prerequisite Requirements:
 1.	Windows Server 2012 or newer on dedicated server
 2.	Java JDK 8
 3.	Apache Maven 3.6.1 
