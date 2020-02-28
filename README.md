@@ -29,6 +29,7 @@ The eLTSS Reference Implementation supports the establishment of an eLTSS FHIR R
     3. Minimize but do not close this process window while the HAPI-FHIR Server is running.
 3. Confirm HAPI FHIR Server 3.8.0 is installed
     1. Open web browser and launch URL: http://localhost:8080/hapi-fhir-jpaserver/
+        | --- | --- |
         | Server | HAPI FHIR R4 Server |
         | Software | HAPI FHIR Server - 3.8.0 |
         | FHIR Base | http://localhost:8080/hapi-fhir-jpaserver/fhir/ |
@@ -50,7 +51,7 @@ The eLTSS Reference Implementation supports the establishment of an eLTSS FHIR R
         2. Start the Jetty Server.  Within the Command Processor Window run the following command: `mvn jetty:run` (minimize but do not close this process window when finished)
         3. Open web browser and launch url: http://localhost:8080/hapi-fhir-jpaserver/
         4. Notice that there are now Resources that have some numbers next to them showing how many records have been posted to the resource
-        ![alt text](https://github.com/ "Logo Title Text 1")
+        ![alt text](https://github.com/onc-healthit/eLTSS-Reference-Implementation/blob/master/5.%20Installation%20instructions/README-images/Resources-1.jpg)
 
 
 6. Open folder 4. eltss test transactions and scripts
