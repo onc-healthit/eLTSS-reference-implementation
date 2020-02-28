@@ -29,7 +29,9 @@ The eLTSS Reference Implementation supports the establishment of an eLTSS FHIR R
     3. Minimize but do not close this process window while the HAPI-FHIR Server is running.
 3. Confirm HAPI FHIR Server 3.8.0 is installed
     1. Open web browser and launch URL: http://localhost:8080/hapi-fhir-jpaserver/
+
         | Item | Description |
+        | --- | --- |
         | Server | HAPI FHIR R4 Server |
         | Software | HAPI FHIR Server - 3.8.0 |
         | FHIR Base | http://localhost:8080/hapi-fhir-jpaserver/fhir/ |
