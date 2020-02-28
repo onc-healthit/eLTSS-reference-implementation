@@ -20,15 +20,15 @@ This reference implementation is for the eLTSS FHIR Implementation Guide (IG) Re
     2. Extract the ZIP file in root folder C:\
     3. Confirm creation of folder C:\hapi-fhir-jpaserver-starter-master
 2. Open Windows Command Processor aka: command prompt (be sure to "Run as Administrator"). Navigate to "C:\ hapi-fhir-jpaserver-starter-master" directory and run the following commands:
-    1. mvn install (this may take approximately 5 minutes)
-    2. mvn jetty:run 
+    1. `mvn install` (this may take approximately 5 minutes)
+    2. `mvn jetty:run` 
     3. Minimize but do not close this process window while the HAPI-FHIR Server is running.
 3. Confirm HAPI FHIR Server 3.8.0 is installed
     1. Open web browser and launch URL: http://localhost:8080/hapi-fhir-jpaserver/
 4. Open folder 2. us-core-fhirr4 profiles and scripts
     1. Run curlscript.bat to install us-core-fhirr4 profiles and scripts
     2. Confirm us-core-fhirr4 profiles and scripts install - Restart Jetty Server
-        1. Close (stop) the Jetty Server. Within the Windows Command Processor window press control+c and then enter Y at "Terminate batch job [Y/N]?"
+        1. Close (stop) the Jetty Server. Within the Windows Command Processor window press control+c and then enter `Y` at "Terminate batch job [Y/N]?"
         2. Start the Jetty Server.  Within the Command Processor Window run the following command: `mvn jetty:run` (minimize but do not close this process window when finished)
         3. Open web browser and launch url: http://localhost:8080/hapi-fhir-jpaserver/
         4. Notice that there are now Resources that have some numbers next to them showing how many records have been posted to the resource.
